@@ -23,8 +23,8 @@ RUN export NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
     && cd /tmp \
     && rm -r numpy-$NUMPY_VERSION \
     && pip install scipy \
-	&& apk add git \
+    && apk add git \
     && pip install git+https://github.com/Microsoft/Sparsesc.git@62e9af43c9f064eba0e3a67c193ecb76891b5a42 --no-deps \
-    && apk --no-cache del --purge build-deps 
+    && apk --no-cache del --purge build-deps
 
 CMD ["/bin/bash"]
